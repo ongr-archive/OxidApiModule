@@ -51,7 +51,7 @@ class OngrRestApiUserController extends AbstractOngrRestApiController
     /**
      * Login to website.
      */
-    public function post()
+    public function postLogin()
     {
         $user = oxNew('ongrRestApiRequestModel')->getDecodedContent();
         $oUser = $this->getUser();
