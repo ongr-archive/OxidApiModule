@@ -17,8 +17,9 @@ Module for OXID that provides API access for checkout process
 | /ongr/api/checkout/          |     |   X  |        |
 | /ongr/api/checkout/delivery/ |  X  |   X  |        |
 | /ongr/api/checkout/payment/  |  X  |   X  |        |
-| /ongr/api/user/login/        |     |   X  |        |
-| /ongr/api/user/check/        |  X  |      |        |
 | /ongr/api/user/              |  X  |      |        |
+| /ongr/api/user/check/        |  X  |      |        |
+| /ongr/api/user/login/        |     |   X  |        |
+| /ongr/api/user/register/     |     |   X  |        |
 
 Happy resting!

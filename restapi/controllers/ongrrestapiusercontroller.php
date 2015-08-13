@@ -38,7 +38,7 @@ class OngrRestApiUserController extends AbstractOngrRestApiController
      */
     public function getCheck()
     {
-        $this->getUser();
+        $oUser = $this->getUser();
         $response = ['logged_in' => $oUser->loadActiveUser()];
 
         if ($response['logged_in']) {
@@ -53,13 +53,34 @@ class OngrRestApiUserController extends AbstractOngrRestApiController
      */
     public function postLogin()
     {
-        $user = oxNew('ongrRestApiRequestModel')->getDecodedContent();
-        $oUser = $this->getUser();
+        $user  = oxNew('ongrRestApiRequestModel')->getDecodedContent();
+        $oUser = oxNew("oxUser");
 
         try {
-            $oUser->login($user['username'], $user['password']);
+            $result = (bool) $oUser->login($user['username'], $user['password']);
         } catch (\Exception $e) {
-            echo json_encode($e->getMessage());
+            $result = $e->getMessage();
         }
+
+        echo json_encode($result);
+    }
+
+    /**
+     * Register to website.
+     */
+    public function postRegister()
+    {
+        $aData = oxNew('ongrRestApiRequestModel')->getDecodedContent();
+        foreach ($aData as $key => $value) {
+            $_GET[$key] = $value;
+        }
+
+        $oUser = oxNew("oxcmp_user");
+        $oRegister = oxNew("Register");
+
+        $oUser->setParent($oRegister);
+        $result = $oUser->createUser();
+
+        echo json_encode($result);
     }
 }

@@ -19,6 +19,8 @@ class OngrRestApiEvents
         'index.php?cl=ongrrestapiarticlecontroller&amp;fnc=index' => 'ongr/api/articles/',
         'index.php?cl=ongrrestapiusercontroller&amp;fnc=index' => 'ongr/api/user/',
         'index.php?cl=ongrrestapiusercontroller&amp;fnc=index&amp;mtd=check' => 'ongr/api/user/check/',
+        'index.php?cl=ongrrestapiusercontroller&amp;fnc=index&amp;mtd=login' => 'ongr/api/user/login/',
+        'index.php?cl=ongrrestapiusercontroller&amp;fnc=index&amp;mtd=register' => 'ongr/api/user/register/',
         'index.php?cl=ongrrestapicheckoutcontroller&amp;fnc=index' => 'ongr/api/checkout/',
         'index.php?cl=ongrrestapicheckoutcontroller&amp;fnc=index&amp;mtd=delivery' => 'ongr/api/checkout/delivery/',
         'index.php?cl=ongrrestapicheckoutcontroller&amp;fnc=index&amp;mtd=payment' => 'ongr/api/checkout/payment/',
